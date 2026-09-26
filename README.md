@@ -14,11 +14,11 @@ notebook không gửi dữ liệu đi đâu khác. Không cần cài gì, không
 2. Chọn **Runtime → Run all** (Ctrl+F9).
 3. Colab cảnh báo notebook *không do Google viết* → bấm **Run anyway** (Vẫn chạy).
 4. Colab xin quyền vào Google Drive → chọn tài khoản của bạn → **Cho phép**.
-5. Notebook tạo trong Drive thư mục `RadioQC/`:
+5. Lần đầu chưa cần file nào: notebook tạo trong Drive thư mục `RadioQC/` rồi nhắc bước tiếp theo.
 
    | Thư mục | Để gì |
    |---|---|
-   | `1_ThuVienQC/` | File gốc các spot quảng cáo (mp3, wav, m4a…), dài ít nhất 5 giây. **Tên file = tên spot**, ví dụ `Honda Vision 30s.mp3` |
+   | `1_ThuVienQC/` | File gốc các spot quảng cáo **của bạn** (mp3, wav, m4a…), dài ít nhất 5 giây. **Tên file = tên spot**, ví dụ `Honda Vision 30s.mp3` |
    | `2_FilePhatSong/` | File phát sóng cần dò. Tên file nên có ngày giờ bắt đầu, ví dụ `CAO DIEM CHIEU 25.9.2026 16H30.mp3` |
    | `3_KetQua/` | Báo cáo Excel, mỗi file phát sóng một báo cáo |
 
