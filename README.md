@@ -51,6 +51,22 @@ rồi **Run all** lại. Không có GPU vẫn dò được bằng file spot.
 
 File 3 giờ ước mất 10–20 phút, phần lớn là thời gian chép lời.
 
+## Khi AI báo quá tải
+
+AI có sẵn của Colab miễn phí nhưng **dùng chung cho mọi người dùng Colab**, nên có lúc quá tải (dòng ⏳ dưới ô 3️⃣).
+Notebook tự hỏi các model Gemini khác của Colab, rồi đợi và thử lại. Vẫn không được thì đoạn đó ghi *CHƯA PHÂN TÍCH*:
+đợi vài phút rồi bấm ▶ ô 3️⃣, chỉ các đoạn còn thiếu được hỏi lại.
+
+**Cách bền nhất: dùng key Gemini riêng** (miễn phí, làm một lần, dùng hạn mức của riêng bạn):
+
+1. Mở [aistudio.google.com/apikey](https://aistudio.google.com/apikey) bằng tài khoản Google của bạn → **Create API key**
+   → sao chép key.
+2. Trong Colab, bấm biểu tượng 🔑 (**Secrets**) ở thanh bên trái → **Add new secret** → *Name*: `GEMINI_API_KEY`,
+   *Value*: dán key → bật **Notebook access**.
+3. Chạy lại. Notebook hỏi key riêng trước; AI của Colab làm dự phòng. Sheet *Thông tin* ghi model nào đã đọc.
+
+Key là của riêng bạn: đừng dán vào ô code, đừng gửi cho người khác.
+
 ## Kho spot tự lớn dần
 
 Mỗi lần chạy (chế độ Drive), quảng cáo mới AI tìm được được lưu làm spot trong **`RadioQC/1_ThuVienQC/Chờ duyệt`**
