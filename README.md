@@ -20,8 +20,17 @@ khoản đó**. Không cần cài gì.
    Bảng kết quả hiện ngay bên dưới, bấm ▶ để nghe từng quảng cáo.
 
 Lần đầu chưa có các thư mục trên thì cứ chạy: notebook tự tạo rồi nhắc bạn bỏ file vào. Mỗi lần chạy, notebook chỉ xử
-lý **file mới** (file chưa có kết quả trong `3_KetQua`); muốn chạy lại tất cả thì tick **CHAY_LAI_TAT_CA** ở ô
-**⚙️ Tuỳ chọn**.
+lý **file mới** (file chưa có kết quả trong `3_KetQua`) và **làm tiếp file còn dở** lần trước; muốn chạy lại tất cả thì
+tick **CHAY_LAI_TAT_CA** ở ô **⚙️ Tuỳ chọn**.
+
+Notebook chia thành các ô chạy nối nhau: **2️⃣ Chép lời** (lâu nhất) → **3️⃣ AI đọc và xuất kết quả** →
+**4️⃣ Duyệt spot tự học**. Ô nào báo lỗi thì bấm ▶ ở chính ô đó:
+
+- **AI báo quá tải** (dòng ⏳ dưới ô 3️⃣): đợi vài phút rồi bấm ▶ ô 3️⃣. Chỉ các đoạn còn thiếu được hỏi lại, không phải
+  chép lời lại (notebook tự đợi và thử lại vài lần trước khi báo).
+- **Chép lời lỗi**: bấm ▶ ô 2️⃣ rồi ▶ ô 3️⃣.
+
+Bản chép lời và câu trả lời của AI được giữ trong `3_KetQua/_tam`, nên mở phiên Colab mới cũng không phải chép lời lại.
 
 Không muốn dùng Drive: ở ô **⚙️ Tuỳ chọn** chọn `NGUON_FILE` = *Tải lên từ máy*, rồi bấm **Choose Files** và chọn file
 phát sóng (kèm file spot nếu có). Cách này **chậm với file lớn** và file chỉ nằm trong phiên Colab, đóng là mất.
@@ -49,9 +58,10 @@ Mỗi lần chạy (chế độ Drive), quảng cáo mới AI tìm được đư
 được cả quảng cáo toàn nhạc mà máy chép lời không nghe ra. Cho tới khi bạn duyệt, kết quả của chúng ghi
 **Cần nghe lại: spot tự học chưa duyệt**.
 
-Duyệt: mở thư mục `Chờ duyệt` trong Drive, nghe từng file. **Đúng** thì đổi tên theo nhãn hàng (ví dụ
-`Vinhomes Green Paradise.wav`) rồi kéo ra thư mục `1_ThuVienQC`; **sai** thì xoá. Notebook chỉ lưu spot đã tự kiểm là
-khớp trọn vẹn, và không bao giờ tự xoá file của bạn. Không muốn học: bỏ tick `TU_HOC_SPOT` ở ô **⚙️ Tuỳ chọn**.
+Duyệt ngay trong notebook, ở ô **4️⃣**: mỗi spot có nút ▶ để nghe, ô tên (điền sẵn nhãn hàng) và lựa chọn
+*Chưa xét / Đúng / Sai*. Chọn xong bấm **Lưu lựa chọn**: spot *Đúng* vào `1_ThuVienQC` với tên bạn đặt; spot *Sai* chuyển
+sang `RadioQC/_Da_loai` và **không bao giờ được đề xuất lại**; spot *Chưa xét* chờ lần sau. Notebook chỉ lưu spot đã tự
+kiểm là khớp trọn vẹn, và không bao giờ tự xoá file của bạn. Không muốn học: bỏ tick `TU_HOC_SPOT` ở ô **⚙️ Tuỳ chọn**.
 
 ## Đọc file Excel
 
