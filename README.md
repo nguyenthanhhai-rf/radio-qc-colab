@@ -5,18 +5,26 @@
 Đưa vào file phát sóng dài 1–3 giờ, nhận về **một file Excel**: có những quảng cáo nào, phát lúc mấy giờ, dài bao lâu,
 kèm **bản chép lời** cả chương trình.
 
-Notebook chạy trên Google Colab bằng **tài khoản Google của bạn**. Không cần cài gì.
+Notebook chạy trên Google Colab bằng **tài khoản Google của bạn** và đọc file thẳng từ **Google Drive của chính tài
+khoản đó**. Không cần cài gì.
 
 ## Mỗi lần dùng
 
-1. Bấm nút **Open in Colab** ở trên, rồi **Runtime → Run all** (Ctrl+F9).
-2. Lần đầu, Colab báo notebook *không do Google viết* → bấm **Run anyway** (Vẫn chạy).
-3. Bấm **Choose Files**, chọn file phát sóng trên máy (chọn được nhiều file).
-   Có file quảng cáo gốc (spot) thì chọn kèm luôn.
-4. Đợi xong: **file Excel tự tải về máy** (thư mục Tải xuống / Downloads). Bảng kết quả hiện ngay bên dưới,
-   bấm ▶ để nghe từng quảng cáo.
+1. Bỏ file phát sóng vào thư mục **`RadioQC/2_FilePhatSong`** trong Google Drive (kéo thả trên drive.google.com,
+   hoặc cài *Google Drive cho máy tính* để file tự tải lên ngầm). Có file quảng cáo gốc (spot) thì bỏ vào
+   **`RadioQC/1_ThuVienQC`** (**tên file = tên spot**, ví dụ `Honda Vision 30s.mp3`).
+2. Bấm nút **Open in Colab** ở trên, rồi **Runtime → Run all** (Ctrl+F9).
+3. Colab báo notebook *không do Google viết* → bấm **Run anyway** (Vẫn chạy). Colab xin quyền vào Google Drive →
+   chọn tài khoản của bạn → **Cho phép**.
+4. Đợi xong: **file Excel tự tải về máy** (thư mục Tải xuống / Downloads) và có một bản trong **`RadioQC/3_KetQua`**.
+   Bảng kết quả hiện ngay bên dưới, bấm ▶ để nghe từng quảng cáo.
 
-File của bạn chỉ nằm trong phiên Colab này, **không lưu vào đâu cả**; đóng Colab là mất.
+Lần đầu chưa có các thư mục trên thì cứ chạy: notebook tự tạo rồi nhắc bạn bỏ file vào. Mỗi lần chạy, notebook chỉ xử
+lý **file mới** (file chưa có kết quả trong `3_KetQua`); muốn chạy lại tất cả thì tick **CHAY_LAI_TAT_CA** ở ô
+**⚙️ Tuỳ chọn**.
+
+Không muốn dùng Drive: ở ô **⚙️ Tuỳ chọn** chọn `NGUON_FILE` = *Tải lên từ máy*, rồi bấm **Choose Files** và chọn file
+phát sóng (kèm file spot nếu có). Cách này **chậm với file lớn** và file chỉ nằm trong phiên Colab, đóng là mất.
 
 Tên file phát sóng nên có ngày giờ bắt đầu, ví dụ `CAO DIEM CHIEU 25.9.2026 16H30.mp3`, để báo cáo ghi giờ thật.
 
@@ -57,15 +65,13 @@ Cột **Tình trạng** của quảng cáo tìm bằng file spot:
 - **Cần nghe lại**: chỉ khớp một phần spot, thường là **một spot khác dùng chung nhạc hiệu**.
 - **Không kiểm được đủ**: spot nằm ở mép file ghi (file bắt đầu hoặc kết thúc giữa spot).
 
-## Kho spot trên Google Drive (tuỳ chọn)
-
-Nếu ngày nào cũng dò cùng một bộ spot, có thể để sẵn chúng trong Google Drive thay vì chọn lại mỗi lần:
-bỏ file spot vào thư mục `RadioQC/1_ThuVienQC` trong Drive (**tên file = tên spot**, ví dụ `Honda Vision 30s.mp3`),
-rồi ở ô **⚙️ Tuỳ chọn** tick **DUNG_KHO_SPOT_TREN_DRIVE**. Colab sẽ xin quyền vào Drive: chọn tài khoản của bạn → **Cho phép**.
-
 ## Hỏi nhanh
 
 - **Tên file phát sóng không có giờ?** Báo cáo dùng giờ tính từ đầu file (`+00:12:30`) và ghi cảnh báo.
 - **Spot ngắn hơn 5 giây** (sound logo) không dò được tin cậy: notebook báo "quá ngắn" và bỏ qua file đó.
 - **File quá 5 phút** được coi là file phát sóng, không phải spot.
-- **Muốn nghe lại sau khi đóng Colab?** File tải lên đã mất; tải lên lại rồi chạy lại.
+- **Drive sắp đầy?** Drive miễn phí có 15 GB (dùng chung với Gmail, Ảnh); mỗi file 3 giờ khoảng 165 MB. Xoá bớt file đã
+  xử lý trong `2_FilePhatSong`, kết quả vẫn còn trong `3_KetQua`. Notebook nhắc khi file đã xử lý chiếm quá 2 GB,
+  không bao giờ tự xoá file của bạn.
+- **Muốn nghe lại sau khi đóng Colab?** File trong Drive vẫn còn: tick **CHAY_LAI_TAT_CA** rồi chạy lại để có lại clip.
+- **Để thư mục khác thay cho `RadioQC`?** Đổi `THU_MUC_DRIVE` ở ô **⚙️ Tuỳ chọn**.
