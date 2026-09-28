@@ -42,6 +42,17 @@ rồi **Run all** lại. Không có GPU vẫn dò được bằng file spot.
 
 File 3 giờ ước mất 10–20 phút, phần lớn là thời gian chép lời.
 
+## Kho spot tự lớn dần
+
+Mỗi lần chạy (chế độ Drive), quảng cáo mới AI tìm được được lưu làm spot trong **`RadioQC/1_ThuVienQC/Chờ duyệt`**
+(file WAV, tên là nhãn hàng kèm ngày giờ). Từ lần sau notebook dò chúng bằng **vân tay**: chính xác tới 0,1 giây và bắt
+được cả quảng cáo toàn nhạc mà máy chép lời không nghe ra. Cho tới khi bạn duyệt, kết quả của chúng ghi
+**Cần nghe lại: spot tự học chưa duyệt**.
+
+Duyệt: mở thư mục `Chờ duyệt` trong Drive, nghe từng file. **Đúng** thì đổi tên theo nhãn hàng (ví dụ
+`Vinhomes Green Paradise.wav`) rồi kéo ra thư mục `1_ThuVienQC`; **sai** thì xoá. Notebook chỉ lưu spot đã tự kiểm là
+khớp trọn vẹn, và không bao giờ tự xoá file của bạn. Không muốn học: bỏ tick `TU_HOC_SPOT` ở ô **⚙️ Tuỳ chọn**.
+
 ## Đọc file Excel
 
 | Sheet | Nội dung |
