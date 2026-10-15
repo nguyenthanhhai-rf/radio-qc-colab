@@ -41,20 +41,25 @@ Tên file phát sóng nên có ngày giờ bắt đầu, ví dụ `CAO DIEM CHIE
 
 | Bạn chọn | Notebook làm gì | Độ tin cậy |
 |---|---|---|
-| Chỉ file phát sóng | **AI tự nhận diện** quảng cáo từ lời nói: chép lời bằng Whisper, rồi Gemini đọc bản chép lời | Có thể sót hoặc lệch ranh giới vài giây: **nên nghe lại** |
+| Chỉ file phát sóng | **AI tự nhận diện** quảng cáo từ lời nói: chép lời bằng Zipformer (mô hình tiếng Việt), rồi Gemini đọc bản chép lời | Có thể sót hoặc lệch ranh giới vài giây: **nên nghe lại** |
 | Thêm file spot (file ngắn, tối đa 5 phút) | **So vân tay âm thanh**: tìm từng lần phát của đúng spot đó, phát đủ hay bị cắt | Chính xác tới 0,1 giây |
+
+AI ghi rõ loại của từng dòng: *QC thương mại* (spot), **Chuyên mục tư vấn** (chương trình tài trợ 3–30 phút: một dòng
+cho cả chuyên mục, từ lời giới thiệu tới hết phần chào bán), **Bản tin quảng cáo** (tin dạng thời sự để quảng bá một
+doanh nghiệp), **QC đọc trực tiếp** (MC đọc quảng cáo trong chương trình), *Đài tự giới thiệu*, *Tài trợ*. Bản tin
+quảng cáo và MC đọc luôn ghi *Cần nghe lại*, vì ranh giới giữa quảng cáo và lời dẫn là AI đoán.
 
 Hai cách chạy cùng lúc được. Quảng cáo khớp spot thì lấy kết quả so vân tay.
 
-AI cần máy Colab có **GPU**. Nếu notebook báo không có GPU: bấm **Runtime → Change runtime type → T4 GPU → Save**,
-rồi **Run all** lại. Không có GPU vẫn dò được bằng file spot.
+**Không cần GPU**: notebook chạy trên máy Colab thường. Ô 2️⃣ in ra tốc độ chép lời và số nhân CPU của máy.
 
 File 3 giờ ước mất 10–20 phút, phần lớn là thời gian chép lời.
 
 ## Khi AI báo quá tải
 
 AI có sẵn của Colab miễn phí nhưng **dùng chung cho mọi người dùng Colab**, nên có lúc quá tải (dòng ⏳ dưới ô 3️⃣).
-Notebook tự hỏi các model Gemini khác của Colab, rồi đợi và thử lại. Vẫn không được thì đoạn đó ghi *CHƯA PHÂN TÍCH*:
+Notebook tự hỏi các model Gemini khác của Colab, rồi **tự đợi (tối đa ~9 phút) và hỏi lại** phần còn thiếu — bạn không
+cần bấm gì. Vẫn không được thì đoạn đó ghi *CHƯA PHÂN TÍCH*:
 đợi vài phút rồi bấm ▶ ô 3️⃣, chỉ các đoạn còn thiếu được hỏi lại.
 
 **Cách bền nhất: dùng key Gemini riêng** (miễn phí, làm một lần, dùng hạn mức của riêng bạn):
