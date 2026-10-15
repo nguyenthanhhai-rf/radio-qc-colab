@@ -23,8 +23,8 @@ Lần đầu chưa có các thư mục trên thì cứ chạy: notebook tự t�
 lý **file mới** (file chưa có kết quả trong `3_KetQua`) và **làm tiếp file còn dở** lần trước; muốn chạy lại tất cả thì
 tick **CHAY_LAI_TAT_CA** ở ô **⚙️ Tuỳ chọn**.
 
-Notebook chia thành các ô chạy nối nhau: **2️⃣ Chép lời** (lâu nhất) → **3️⃣ AI đọc và xuất kết quả** →
-**4️⃣ Duyệt spot tự học**. Ô nào báo lỗi thì bấm ▶ ở chính ô đó:
+Notebook chia thành các ô chạy nối nhau: **2️⃣ Chép lời** (lâu nhất) → **3️⃣ AI đọc và xuất kết quả**. Ô nào báo
+lỗi thì bấm ▶ ở chính ô đó:
 
 - **AI báo quá tải** (dòng ⏳ dưới ô 3️⃣): đợi vài phút rồi bấm ▶ ô 3️⃣. Chỉ các đoạn còn thiếu được hỏi lại, không phải
   chép lời lại (notebook tự đợi và thử lại vài lần trước khi báo).
@@ -67,17 +67,18 @@ Notebook tự hỏi các model Gemini khác của Colab, rồi đợi và thử 
 
 Key là của riêng bạn: đừng dán vào ô code, đừng gửi cho người khác.
 
-## Kho spot tự lớn dần
+## Tự học (bạn không cần làm gì)
 
-Mỗi lần chạy (chế độ Drive), quảng cáo mới AI tìm được được lưu làm spot trong **`RadioQC/1_ThuVienQC/Chờ duyệt`**
-(file WAV, tên là nhãn hàng kèm ngày giờ). Từ lần sau notebook dò chúng bằng **vân tay**: chính xác tới 0,1 giây và bắt
-được cả quảng cáo toàn nhạc mà máy chép lời không nghe ra. Cho tới khi bạn duyệt, kết quả của chúng ghi
-**Cần nghe lại: spot tự học chưa duyệt**.
+Mỗi lần chạy (chế độ Drive), quảng cáo AI tìm được được notebook **tự nhớ bằng âm thanh** trong thư mục
+**`RadioQC/_tu_hoc`** (file WAV, tên là nhãn hàng kèm ngày giờ). Từ file sau — kể cả file kế tiếp trong cùng lần chạy —
+notebook nhận ra chúng bằng **vân tay âm thanh**, nên vẫn bắt được khi AI quá tải hoặc khi máy chép lời không nghe ra
+lời (nhạc to, hát). Dòng tìm ra nhờ trí nhớ có cột *Căn cứ* ghi **Nhớ từ lần trước**.
 
-Duyệt ngay trong notebook, ở ô **4️⃣**: mỗi spot có nút ▶ để nghe, ô tên (điền sẵn nhãn hàng) và lựa chọn
-*Chưa xét / Đúng / Sai*. Chọn xong bấm **Lưu lựa chọn**: spot *Đúng* vào `1_ThuVienQC` với tên bạn đặt; spot *Sai* chuyển
-sang `RadioQC/_Da_loai` và **không bao giờ được đề xuất lại**; spot *Chưa xét* chờ lần sau. Notebook chỉ lưu spot đã tự
-kiểm là khớp trọn vẹn, và không bao giờ tự xoá file của bạn. Không muốn học: bỏ tick `TU_HOC_SPOT` ở ô **⚙️ Tuỳ chọn**.
+Notebook tự giữ cho trí nhớ sạch: chỉ nhớ quảng cáo thương mại có tên nhãn hàng, mỗi sản phẩm một file, và chỉ khi đoạn
+cắt tự khớp trọn vẹn; quảng cáo nhớ sai (thường xuyên chỉ khớp một phần) hoặc **60 ngày không phát** thì tự xoá. Bạn
+không cần mở thư mục này. Không muốn dùng: bỏ tick `TU_HOC_SPOT` ở ô **⚙️ Tuỳ chọn**.
+
+File spot gốc của bạn (nếu có) vẫn bỏ vào `1_ThuVienQC` như cũ: chúng luôn được ưu tiên hơn trí nhớ tự học.
 
 ## Đọc file Excel
 
