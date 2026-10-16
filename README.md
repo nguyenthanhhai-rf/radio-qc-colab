@@ -37,6 +37,19 @@ phát sóng (kèm file spot nếu có). Cách này **chậm với file lớn** v
 
 Tên file phát sóng nên có ngày giờ bắt đầu, ví dụ `CAO DIEM CHIEU 25.9.2026 16H30.mp3`, để báo cáo ghi giờ thật.
 
+## Sổ theo dõi quảng cáo (nên có)
+
+Bỏ file **sổ theo dõi quảng cáo** của kênh (file Excel các bạn vẫn dùng, ví dụ `VOV1_TheodoiQC_2026.xlsb`) vào thư mục
+**`RadioQC/4_SoTheoDoi`**. Notebook đọc trong sổ những sản phẩm **có lịch phát hôm đó** và đưa danh sách tên cho AI:
+
+- AI ghi tên quảng cáo **đúng như trong sổ** (cột *Tên trong sổ* của file kết quả), nên dễ đối chiếu với sổ.
+- AI nhận ra trọn vẹn hơn các chuyên mục tư vấn và spot phát sát chuyên mục. Đo trên VOV1 ngày 13/10 (9 file, 18 giờ):
+  bắt **82/82 spot** và **19/20 chuyên mục** có trong sổ, tất cả đúng tên trong sổ.
+- Danh sách chỉ để gọi tên: AI **vẫn tìm cả quảng cáo không có lịch** trong sổ.
+
+Tên file sổ phải **bắt đầu bằng tên kênh** giống tên file phát sóng (`VOV1_...` cho các file `VOV1_2026...mp3`). Sổ đổi
+lịch thì bỏ bản mới vào thay bản cũ. Không có sổ thì notebook vẫn chạy như thường. Sheet *Thông tin* ghi sổ nào đã dùng.
+
 ## Hai cách dò (notebook tự chọn)
 
 | Bạn chọn | Notebook làm gì | Độ tin cậy |
